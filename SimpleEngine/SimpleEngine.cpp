@@ -1,14 +1,20 @@
-// SimpleEngine.cpp : Definiert den Einstiegspunkt für die Konsolenanwendung.
+// SimpleEngine.cpp : Definiert den Einstiegspunkt fï¿½r die Konsolenanwendung.
 //
 
+
 #include <stdio.h>
-#include <tchar.h>
 #include <iostream>
+#include "Game.hpp"
 
-int _tmain(int argc, _TCHAR* argv[])
+
+int main(int argc, char* argv[])
 {
-	std::cout << "Hello World" << std::endl;
+    Game* g = new Game();
 
-	return 0;
+    g->GameLoop();
+
+    delete g;
+    return 0;
 }
+
 
