@@ -14,7 +14,7 @@ Window::Window()
     // Check that the window was successfully created
     if (window == NULL) {
         // In the case that the window could not be made...
-        printf("Could not create window: %s\n", SDL_GetError());
+        std::cout<<"Could not create window: %s\n"<< SDL_GetError()<<std::endl;
     }
 }
 

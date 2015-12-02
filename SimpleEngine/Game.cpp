@@ -1,5 +1,5 @@
 #include "Game.hpp"
-#include "SDL2/SDL.h"
+#include "SDL.h"
 
 
 Game::Game()
