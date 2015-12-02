@@ -13,6 +13,7 @@
 *.depend
 *.layout
 *.sln
+*.suo
 *.sdf
 *.vcsproj.filters
 *.vcproj
@@ -21,4 +22,4 @@
 ###########
 bin/*
 obj/*
-
+Debug/*
