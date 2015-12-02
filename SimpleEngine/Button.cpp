@@ -5,11 +5,20 @@ Button::Button()
     //ctor
 }
 
-Button::~Button(){}
+Button::Button(void* callback)
+{
+    ActionCallback = callback;
+}
+
+Button::~Button()
 {
     //dtor
 }
 
+bool Button::IsInteractable()
+{
+    return interactable;
+}
 
 void Button::Interactable(bool active)
 {
@@ -17,11 +26,11 @@ void Button::Interactable(bool active)
     {
         if(active)
         {
-            ChangeState(btnState.None);
+            ChangeState(BtnState.None);
         }
         else
         {
-            ChangeState(btnState.Inactive)
+            ChangeState(BtnState.Inactive);
         }
     }
 }
@@ -34,7 +43,15 @@ void Button::Update()
     }
 }
 
-/*void Button::ChangeState(int newState)
+void Button::Action()
+{
+    if(interactable && ActionCallback != NULL)
+    {
+        *ActionCallback();
+    }
+}
+
+void Button::ChangeState(BtnState newState)
 {
     if(Button::state == newState)
     {return;}
@@ -43,11 +60,11 @@ void Button::Update()
     y= (size*state%2)/2*/
 
 
-}*/
+}
 
-/*override void Button::Draw()
+void Button::Draw()
 {
 
-}*/
+}
 
 

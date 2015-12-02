@@ -1,6 +1,7 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
+#include "Drawable.hpp"
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_rect.h"
 
@@ -9,33 +10,31 @@ enum BtnState {
     Hover,
     Down,
     Inactive,
-}
+};
 
-
-class Button : Drawable
+class Button : public Drawable
 {
-    public:
-        Button();
-        virtual ~Button();
-        void Interactable(bool);
-        bool IsInteractable() {return interactable; };
-
-        void Update();
-
-
-
-        //override void Draw();
-    protected:
     private:
 
-        //void ChangeState(int);
-
+        void ChangeState(BtnState);
+        void* ActionCallback;
         //std::string image;
-        bool interactable = true;
+        bool interactable;
 
         BtnState state;
 
+    public:
+        Button();
+        Button(void* );
+        virtual ~Button();
+        void Interactable(bool);
+        bool IsInteractable();
 
+        void Update();
+
+        void Action();
+
+        void Draw();
 };
 
 
