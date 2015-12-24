@@ -5,7 +5,7 @@
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_rect.h"
 
-enum BtnState {
+enum class BtnState {
     None,
     Hover,
     Down,
@@ -17,7 +17,7 @@ class Button : public Drawable
     private:
 
         void ChangeState(BtnState);
-        void* ActionCallback;
+        void (*ActionCallback)();
         //std::string image;
         bool interactable;
 
@@ -25,7 +25,7 @@ class Button : public Drawable
 
     public:
         Button();
-        Button(void* );
+        Button(void (*func)());
         virtual ~Button();
         void Interactable(bool);
         bool IsInteractable();
