@@ -1,4 +1,5 @@
 #include "Drawable.hpp"
+#include "Loader.hpp"
 
 Drawable::Drawable()
 {
@@ -12,5 +13,5 @@ Drawable::~Drawable()
 
 void Drawable::Draw()
 {
-    // sdl draw call
 }
+

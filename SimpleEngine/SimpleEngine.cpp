@@ -1,4 +1,4 @@
-// SimpleEngine.cpp : Definiert den Einstiegspunkt f�r die Konsolenanwendung.
+// SimpleEngine.cpp : Definiert den Einstiegspunkt fuer die Konsolenanwendung.
 //
 
 
@@ -10,10 +10,9 @@
 int main(int argc, char* argv[])
 {
     Game* g = new Game();
-
     g->GameLoop();
-
     delete g;
+
     return 0;
 }
 

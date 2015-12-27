@@ -1,8 +1,8 @@
 #include "Button.hpp"
-
+#include "Loader.hpp"
 Button::Button()
 {
-    //ctor
+	btnImage = Loader::LoadImage("Button.bmp");
 }
 
 Button::~Button()
@@ -12,7 +12,8 @@ Button::~Button()
 
 Button::Button(void (*callback)())
 {
-    ActionCallback = callback;
+	btnImage = Loader::LoadImage("Button.bmp");
+    //ActionCallback = callback;
 }
 
 bool Button::IsInteractable()
@@ -62,9 +63,9 @@ void Button::ChangeState(BtnState newState)
 
 }
 
-void Button::Draw()
+void Button::Draw(SDL_Surface* screen)
 {
-
+	SDL_BlitSurface(btnImage, NULL, screen, NULL);
 }
 
 

@@ -2,8 +2,8 @@
 #define BUTTON_H
 
 #include "Drawable.hpp"
-#include "SDL2/SDL.h"
-#include "SDL2/SDL_rect.h"
+#include "SDL.h"
+#include "SDL_image.h"
 
 enum class BtnState {
     None,
@@ -22,6 +22,7 @@ class Button : public Drawable
         bool interactable;
 
         BtnState state;
+		SDL_Surface *btnImage;
 
     public:
         Button();
@@ -34,7 +35,7 @@ class Button : public Drawable
 
         void Action();
 
-        void Draw();
+        void Draw(SDL_Surface* screen);
 };
 
 
