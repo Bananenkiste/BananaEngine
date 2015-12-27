@@ -15,14 +15,22 @@
 *.sln
 *.suo
 *.sdf
-*.vcsproj.filters
 *.vcproj
+*.tlog
+*.log
+*.vcxproj
+*.filters
+*.user
+*.sdf
+*.opensdf
+*.sdf
+*.idb
+*.pdb
 
 # Folders #
 ###########
 bin/*
 obj/*
 Debug/*
-Debug\*
-*.tlog
-*.log
+x64/*
+.vs/*
