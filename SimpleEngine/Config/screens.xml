@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Screens>
+	<Screen name="Main" background="bg.png">
+		<Button name="Start Game" function="Game" rect="20,20,120,60" params=""  />
+		<Button name="Settings" function="Menu" rect="160,20,120,60" params="Settings"  />
+		<Button name="Quit Game" function="Exit" rect="300,20,120,60" params=""  />
+	</Screen>
+	<Screen name="Settings" background="bg.png">
+		<Button name="Start Game" function="Game" rect="20,20,360,180" params=""  />
+		<Button name="Settings" function="Menu" rect="380,20,360,180" params="Settings"  />
+		<Button name="Quit Game" function="Exit" rect="760,20,360,180" params=""  />
+	</Screen>
+</Screens>

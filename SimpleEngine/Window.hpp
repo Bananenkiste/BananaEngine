@@ -22,6 +22,8 @@ class Window
 		Scene* scene;
         SDL_Window *window;
 		SDL_Surface* screen;
+
+		friend class Loader;
 };
 
 #endif // WINDOW_H

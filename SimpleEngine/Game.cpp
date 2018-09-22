@@ -1,9 +1,9 @@
 #include "Game.hpp"
 #include "SDL.h"
 #include "SDL_image.h"
-
+#include "Input.hpp"
 #include "Loader.hpp"
-
+#include "Settings.hpp"
 
 Game::Game()
 {
@@ -14,8 +14,12 @@ Game::Game()
    {
 	   std::cout << "SDL image init failed!" << std::endl;
    }
+   
+   Settings::LoadXML("Config/screens.xml");
+
+   Input::Init();
    window = new Window();
-   Loader::LoadImage("Button.bmp");
+
 }
 
 Game::~Game()
@@ -35,7 +39,10 @@ void Game::GameLoop()
         {
             switch(event.type)
             {
-                case SDL_QUIT:
+				case SDL_KEYUP: case SDL_KEYDOWN: case SDL_MOUSEMOTION: case SDL_MOUSEBUTTONUP: case SDL_MOUSEBUTTONDOWN:
+					Input::Update(&event);
+					break;
+				case SDL_QUIT:
                     end = true;
                     break;
                 default:

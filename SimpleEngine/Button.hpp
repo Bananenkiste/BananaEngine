@@ -4,12 +4,15 @@
 #include "Drawable.hpp"
 #include "SDL.h"
 #include "SDL_image.h"
+#include "Vector2D.hpp"
+#include <iostream>
+#include "Settings.hpp"
 
 enum class BtnState {
-    None,
-    Hover,
-    Down,
-    Inactive,
+    None = 0,
+    Hover = 1,
+    Down = 2,
+    Inactive = 3,
 };
 
 class Button : public Drawable
@@ -18,16 +21,21 @@ class Button : public Drawable
 
         void ChangeState(BtnState);
         void (*ActionCallback)();
-        //std::string image;
         bool interactable;
 
         BtnState state;
 		SDL_Surface *btnImage;
+		SDL_Rect* btnSize;
+		SDL_Rect* btnPos;
+		Vector2D size = Vector2D(0,0);
 
     public:
         Button();
-        Button(void (*func)());
-        virtual ~Button();
+		Button(int, int, int, int);
+        Button(SDL_Rect*,void (*func)());
+		Button(ButtonData*);
+		
+		virtual ~Button();
         void Interactable(bool);
         bool IsInteractable();
 

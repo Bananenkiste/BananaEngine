@@ -32,3 +32,6 @@
 Debug\*
 x64\*
 .vs/*
+*.obj
+*.enc
+*.ilk
